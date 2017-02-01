@@ -1,6 +1,6 @@
 angular.module("demo",['ui.router', 'ngResource'])
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-        const BASE_PATH_ROUTING = "client/src";
+
         $stateProvider
             .state('splash', {
                 url: '/',
@@ -20,8 +20,8 @@ angular.module("demo",['ui.router', 'ngResource'])
                 },
                 abstract: true
             })
-            .state('app.home', {
-                url: '/home',
+            .state('app.myPosts', {
+                url: '/My-Posts',
                 views: {
                     'contentSection': {
                         templateUrl: BASE_PATH_ROUTING + '/myPosts/myPosts.html',

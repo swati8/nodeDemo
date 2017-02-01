@@ -41,34 +41,3 @@ gulp.task('clean', function (cb) {
         .pipe(rimraf());
 });
 
-/* Converting sass to css. */
-/*gulp.task('sass', function() {
-    return gulp.src('lightbox/setup/scss/app.scss')
-        //.pipe(concat('app.scss'))
-        //.pipe(gulp.dest('./app'))
-        .pipe(sass()) // Using gulp-sass
-        .pipe(gulp.dest('lightbox/css'))
-});*/
-
-/* Combining all controllers. */
-/*gulp.task('scriptsController', function() {
-    return gulp.src('lightbox/setup/scripts/controllers/!*.js')
-        .pipe(concat('appControllers.js'))
-        .pipe(insert.append(';'))
-        .pipe(insert.prepend("'use strict';angular.module('lightbox')"))
-        .pipe(gulp.dest('lightbox/scripts/'));
-});*/
-
-/* Task to be taken care at the time of development. */
-/*
-gulp.task('set-devTizen', function () {
-    if(environments.development()){
-        console.log("in dev");
-        return gulp.src(['lightbox/setup/flavors/development/devConstants.js',
-                'lightbox/setup/scripts/constants/constants.js',
-                'lightbox/setup/tizen/scripts/constants/constants.js'])
-            .pipe(concat('appConstants.js'))
-            .pipe(gulp.dest('lightbox/scripts/'));
-    }
-});
-*/
