@@ -1,0 +1,40 @@
+1. start server
+2. serve index.html at client side
+3. api hits
+
+Things to include
+ -> express
+ -> body parser
+
+
+## You need body parser to parse body from request. In short; body-parser extracts the entire body portion
+of an incoming request stream and exposes it on req.body as something easier to interface with.
+
+config (Application)
+
+ - application name
+ - application version
+ - environment setup
+ - start server
+ - serve index.html of client
+
+
+To do :
+    1. start server (15 min)  :::
+    2. call index.html of client (30 min)
+    3. setup angular at client side (30 min)
+    4. create a button click event (console.log) (30 min)
+    5. basic setup at server side (like including express, bodyparser etc.) (1 hr)
+    6. create api register event ('/',get, post, etc.) (30 min)
+    7. create controller and service (1 hr)
+    8. create mongoose connection (2 hr)
+ //   9. test it (2 hr)
+    10. create api hit to server from client side (2 hr)
+    11. test for data storage (2 hr)
+
+    12. study again login via gmail, fb and twitter (3-4 hrs)
+    13. reading timeline (2 hr)
+    14. make a seperate project and implement on it
+    15. incorperate in your project (4 hr)
+
+
