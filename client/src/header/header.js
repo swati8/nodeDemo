@@ -1,3 +1,4 @@
-/**
- * Created by swati on 1/2/17.
- */
+angular.module("demo").controller("headerController",["$scope",function ($scope) {
+    console.log("heyyyy");
+}]);
+

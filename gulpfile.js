@@ -12,36 +12,32 @@ var path = require('path');
 //var qa = environments.make("qa");
 
 /* Gulp task at the time of build. */
-gulp.task('buildTizen', function(callback) {
+gulp.task('build', function(callback) {
     runSequence(
         'clean',
-        'TizenOrsayCommonCode',
+        'controllers',
         callback);
 });
 
 /* Gulp task at the time of build. */
-gulp.task('TizenOrsayCommonCode', function(callback) {
+gulp.task('controllers', function(callback) {
     runSequence(
 //        'sass',
-        "scriptsStorage",
+        "scriptsController",
         callback);
 });
 
 
 /* Storage. */
-gulp.task('scriptsStorage', function() {
-    return gulp.src([
-            path.join('*.js'),
-            path.join('server/*.js'),
-            path.join('server/*/*.js')
-    ])
-        .pipe(concat('appStorage.js'))
-        .pipe(gulp.dest('./'));
+gulp.task('scriptsController', function() {
+    return gulp.src('client/src/*/*.js')
+        .pipe(concat('appControllers.js'))
+        .pipe(gulp.dest('./client'));
 });
 
 /* Cleaning Task is started now.*/
 gulp.task('clean', function (cb) {
-    return gulp.src("/", 'appStorage.js', { read: false })
+    return gulp.src('./client/appControllers.js', { read: false })
         .pipe(rimraf());
 });
 

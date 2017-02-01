@@ -4,17 +4,17 @@ angular.module("demo",['ui.router', 'ngResource'])
         $stateProvider
             .state('splash', {
                 url: '/',
-                templateUrl: BASE_PATH_ROUTING + '/splash/splash.html'
-               // controller: 'splashController as splash'
+                templateUrl: BASE_PATH_ROUTING + '/splash/splash.html',
+                controller: 'splashController as splash'
             })
             .state('app', {
                 views: {
                     '': {
-                        templateUrl: BASE_PATH_ROUTING + '/app/app.html'
-                       // controller: 'appController as app'
+                        templateUrl: BASE_PATH_ROUTING + '/app/app.html',
+                        controller: 'appController as app'
                     },
                     'headerSection@app': {
-                       // controller: 'navigationController as navigation',
+                        controller: 'headerController as header',
                         templateUrl: BASE_PATH_ROUTING + '/header/header.html'
                     }
                 },
@@ -24,8 +24,8 @@ angular.module("demo",['ui.router', 'ngResource'])
                 url: '/home',
                 views: {
                     'contentSection': {
-                        templateUrl: BASE_PATH_ROUTING + '/home/home.html'
-                      //  controller: 'homeController as home'
+                        templateUrl: BASE_PATH_ROUTING + '/myPosts/myPosts.html',
+                        controller: 'myPostsController as myPosts'
                     }
                 },
                 'params': {
