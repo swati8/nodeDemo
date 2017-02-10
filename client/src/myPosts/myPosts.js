@@ -1,17 +1,22 @@
 angular.module("demo").controller("myPostsController",["$scope","apiResponse",function ($scope,apiResponse) {
     console.log("heyyyy");
     var myPosts = this;
-    (function () {
-       apiResponse.apiGet("post",function (response) {
+
+    myPosts.getPosts = function () {
+       apiResponse.apiGet("post",null,function (response) {
            console.log("response",response);
+           myPosts.allPosts = response;
+           $scope.$digest();
        })
-    })();
-    myPosts.allPosts = [{
-        post : "message1"
-    },{
-        post : "message2"
-    },{
-        post : "message3"
-    }]
+    };
+
+    myPosts.content = "";
+
+    myPosts.submitPost = function () {
+      apiResponse.apiPost("post",{content: myPosts.content},function (response) {
+          console.log("response", response);
+          myPosts.allPosts.unshift(response);
+      })
+    };
 }]);
 

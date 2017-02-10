@@ -24,8 +24,8 @@ angular.module("demo",['ui.router', 'ngResource'])
                 url: '/My-Posts',
                 views: {
                     'contentSection': {
-                        templateUrl: BASE_PATH_ROUTING + '/myPosts/myPosts.html',
-                        controller: 'myPostsController as myPosts'
+                        controller: 'myPostsController as myPosts',
+                        templateUrl: BASE_PATH_ROUTING + '/myPosts/myPosts.html'
                     }
                 },
                 'params': {
