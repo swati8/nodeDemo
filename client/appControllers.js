@@ -3,16 +3,6 @@ angular.module("demo").controller("appController",["$scope",function ($scope) {
 }]);
 
 
-angular.module("demo").controller("splashController",["$scope",function ($scope) {
-        console.log("heyyyy");
-}]);
-
-
-angular.module("demo").controller("headerController",["$scope",function ($scope) {
-    console.log("heyyyy");
-}]);
-
-
 angular.module("demo").controller("myPostsController",["$scope","apiResponse",function ($scope,apiResponse) {
     console.log("heyyyy");
     var myPosts = this;
@@ -33,5 +23,21 @@ angular.module("demo").controller("myPostsController",["$scope","apiResponse",fu
           myPosts.allPosts.unshift(response);
       })
     };
+    
+    myPosts.updateFavourite = function () {
+        apiResponse.apiUpdate("post",{},function (response) {
+            
+        })
+    }
+}]);
+
+
+angular.module("demo").controller("splashController",["$scope",function ($scope) {
+        console.log("heyyyy");
+}]);
+
+
+angular.module("demo").controller("headerController",["$scope",function ($scope) {
+    console.log("heyyyy");
 }]);
 

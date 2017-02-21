@@ -81,4 +81,27 @@ angular.module("demo").service('apiResponse',["apiData", function (apiData) {
            alert("Please check your internet connection.")
        }
    };
+
+    this.apiUpdate = function (value,parameter,successCallback,failureCallback) {
+       if(checkNetwork()) {
+           console.log("parameter and value :",parameter,value);
+           apiData(parameter).postData({value:value}).$promise.then(function (response) {
+               if(checkApiResponseError(response)) {
+                   console.log("response : ",response);
+                   if(successCallback){
+                       successCallback(response.data);
+                   }
+               }
+           },function (error) {
+               if(failureCallback) {
+                   failureCallback(error);
+               } else {
+                   alert("Oops! It seems something went wrong. We regret for the inconvienence caused. Please try again later.");
+                   console.log("Error : ", error);
+               }
+           });
+       } else {
+           alert("Please check your internet connection.")
+       }
+   };
 }]);

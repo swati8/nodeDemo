@@ -8,7 +8,7 @@
     </div>
     <div style="border: 2px #000;padding-top: 10%" ng-repeat="allPost in myPosts.allPosts">
         {{allPost.content}}
-        <span style="float: right;" class="glyphicon glyphicon-heart"></span>
+        <i style="float: right;" class="glyphicon glyphicon-heart" ng-click="myPosts.updateFavourite()"></i>
     </div>
 </div>
 

@@ -18,5 +18,11 @@ angular.module("demo").controller("myPostsController",["$scope","apiResponse",fu
           myPosts.allPosts.unshift(response);
       })
     };
+    
+    myPosts.updateFavourite = function () {
+        apiResponse.apiUpdate("post",{},function (response) {
+            
+        })
+    }
 }]);
 
